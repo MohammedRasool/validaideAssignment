@@ -1,0 +1,19 @@
+# Dependencies
+/vendor/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Behat
+/build/
+/var/
+*.cache
