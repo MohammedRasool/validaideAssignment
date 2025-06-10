@@ -1,0 +1,29 @@
+default:
+  suites:
+    ui:
+      paths:
+        - '%paths.base%/features/ui'
+      contexts:
+        - Features\Bootstrap\LoginContext
+        - Features\Bootstrap\InventoryContext
+        - Features\Bootstrap\CartContext
+        - Features\Bootstrap\CheckoutContext
+  
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'https://www.saucedemo.com'
+      sessions:
+        default:
+          selenium2:
+            wd_host: 'http://localhost:4444/wd/hub'
+            capabilities:
+              browserName: 'firefox'
+              platform: 'LINUX'
+              marionette: true
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig
+      file_name: report
+      print_args: true
+      print_outp: true
+      loop_break: true
